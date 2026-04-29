@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  font-family: 'Dancing Script', cursive;
+
+  background: linear-gradient(
+    to bottom,
+    #b3e5fc,  /* light blue (top) */
+    #a5b4fc,  /* sofy periwinkle (middle) */
+    #c084fc   /* light purple (bottom) */
+  );
+
+  min-height: 100vh;
+}
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+  backdrop-filter: blur(10px);
+
+  background: rgba(255, 192, 193, 0.7); /* baby pink */
+
+  border-bottom: 1px solid rgba(255, 182, 193, 0.5);
+}
+
+/* BRAND */
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.headshot {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* NAME */
+.brand-text h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+
+  background: linear-gradient(
+    90deg,
+    #b3e5fc,  /* light blue (top) */
+    #a5b4fc,  /* sofy periwinkle (middle) */
+    #c084fc   /* light purple (bottom) */
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* NAV */
+.site-nav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+/* cute underline animation */
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #ff9acb, #8ecbff);
+  transition: width 0.25s ease;
+}
+
+.site-nav a:hover::after,#8AC7FC#89C7FC#88C6FC#6BA7DA
+.site-nav a.active::after {
+  width: 100%;
+}
+
+/* PAGE CONTENT */
+.page-content {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px 24px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .site-nav {
+    gap: 14px;
+  }
+
+  .page-content {
+    margin: 20px;
+    padding: 20px;
+  }
+}
